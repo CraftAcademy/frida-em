@@ -3,24 +3,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="keywords" content="<%= "#{shared_meta_keywords}#{ content_for?(:keywords) ? ",#{yield(:keywords)}" : ''}" %>">
 <meta name="description" content="<%= content_for?(:description) ? yield(:description) : default_meta_description %>">
-<meta name="author" content="<%= content_for?(:author) ? yield(:author) : 'LashQueen.se' %>">
+<meta name="author" content="<%= content_for?(:author) ? yield(:author) : 'ByFridaEM' %>">
 <% if content_for?(:robots) %>
     <meta name="robots" content="<%= yield(:robots) %>">
 <% end %>
-<meta name="copyright" content="LashQueen.se">
+<meta name="copyright" content="ByFridaEM">
 <meta name="coverage" content="Worldwide">
 <meta name="distribution" content="Global">
-<meta name="application-name" content="LashQueen.se e-commerce site">
+<meta name="application-name" content="ByFridaEM e-commerce site">
 
-<meta property="og:title" content="<%= content_for?(:title) ? yield(:title) : 'LashQueen.se' %>"/>
+<meta property="og:title" content="<%= content_for?(:title) ? yield(:title) : 'ByFridaEM' %>"/>
 <meta property="og:type" content="<%= params[:controller] == 'products' ? 'product' : 'website' %>"/>
 <meta property="og:url" content="<%= request.original_url %>"/>
-<meta property="og:site_name" content="LashQueen.se"/>
+<meta property="og:site_name" content="ByFridaEM"/>
 <meta property="og:description" content="<%= content_for?(:description) ? yield(:description) : default_meta_description %>">
 <meta property="og:image" content="<%= asset_path 'screenshot.png' %>">
 
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="<%= content_for?(:title) ? yield(:title) : 'LashQueen.se' %>"/>
+<meta name="twitter:title" content="<%= content_for?(:title) ? yield(:title) : 'ByFridaEM' %>"/>
 <meta name="twitter:url" content="<%= request.original_url %>">
 <meta name="twitter:site" content="@LashQueen">
 <meta name="twitter:image:src" content="<%= asset_path 'screenshot.png' %>">
