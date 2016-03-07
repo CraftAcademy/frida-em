@@ -1,0 +1,15 @@
+Hej <%=@order.first_name%>!
+
+Re: Besällning #<%=@order.number%>
+
+Vi har skickat din beställning och du bör få din leverans inom de närmaste dagarna
+
+<% if @order.delivery_service && @order.courier_tracking_url -%>
+Du kan spåra din sändning online på:
+<%=@order.courier_tracking_url%>
+<% end -%>
+
+Med vänliga hälsningar,
+
+<%=Shoppe.settings.store_name%>
+<%=Shoppe.settings.email_address%>

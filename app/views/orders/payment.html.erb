@@ -1,0 +1,51 @@
+<% content_for :js do %>
+    <% shoppe_stripe_javascript %>
+<% end %>
+
+
+<% @page_title = 'Checkout' %>
+<%= render 'orders/checkout_sidebar' %>
+<div class="checkout">
+
+
+
+  <%= form_tag({:controller => 'orders', :action => 'payment'}, :id => 'stripeForm', :class => 'stripeForm') do %>
+      <%= hidden_field_tag 'stripe_token', '', name: 'stripe_token', data: {stripe: 'token'} %>
+      <%= field_set_tag nil, :class => 'payment' do %>
+          <h3>Betala med ditt kreditkort</h3>
+          <p class="secure"> <%= link_to (image_tag 'solid.png'), 'https://stripe.com/se/features#seamless-security' %> </p>
+          <%= image_tag 'visa-amex-master.jpeg', class: 'cards' %>
+          <p class="stripeError" style="font-weight: bold"></p>
+
+          <dl>
+            <dt>
+              <%= label_tag 'card_number', 'Kortnummer' %>
+            </dt>
+            <dd class="number">
+              <%= text_field_tag 'card_number', '', data: {stripe: 'number'}, name: nil %>
+            </dd>
+          </dl>
+          <dl>
+            <dt>
+              <%= label_tag 'exp_month', 'Giltighet (mm/yyyy)' %>
+            </dt>
+            <dd class="expiry">
+              <%= select_tag nil, options_for_select((1..12).to_a), data: {stripe: 'exp_month'} %>
+              <%= select_tag nil, options_for_select((Date.today.year..Date.today.year + 10).to_a), data: {stripe: 'exp_year'}, :class => 'year' %>
+            </dd>
+          </dl>
+          <dl>
+            <dt>
+              <%= label_tag 'cvc', 'Säkerhetskod' %>
+            </dt>
+            <dd class="cvc">
+              <%= text_field_tag 'cvc', '', :name => nil, maxlength: 4, data: {stripe: 'cvc'} %>
+              <span>3 siffrig kod på baksidan av kortet.</span>
+            </dd>
+          </dl>
+      <% end %>
+      <p class="submit">
+        <%= submit_tag 'Granska din order', class: 'review' %>
+      </p>
+  <% end %>
+</div>
