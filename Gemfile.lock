@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/tochman/shoppe.git
-  revision: 8b1c6f1eb9455027aa4751ba784779404904bcf7
+  revision: 54f08e553914a42d4097949db8f4243c3e4c3476
   branch: customers
   specs:
     shoppe (1.0.5.1)
@@ -17,8 +17,8 @@ GIT
       nifty-utils (>= 1.0, < 1.1)
       rails (>= 4.0.0, < 5.0)
       ransack (>= 1.2.0, < 1.6.3)
+      roo (< 1.14)
       roo (>= 1.13.0, < 1.14)
-      roo (>= 1.13.0)
       sass-rails (~> 5.0.1)
       uglifier (>= 2.2, < 3.0)
 
