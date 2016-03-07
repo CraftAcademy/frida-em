@@ -1356,7 +1356,7 @@ h1 .main-brand {
 }
 
 .rm_container h2 {
-  background: transparent url(lines.png) repeat top left;
+  background: transparent image-url('lines.png') repeat top left;
   padding: 10px 30px;
   position: absolute;
   bottom: 170px;
@@ -1443,12 +1443,12 @@ h1 .main-brand {
 }
 
 .rm_nav a.rm_next {
-  background: transparent url(../images/next.png) no-repeat top left;
+  background: transparent image-url('next.png') no-repeat top left;
   right: 0px;
 }
 
 .rm_nav a.rm_prev {
-  background: transparent url(../images/prev.png) no-repeat top left;
+  background: transparent image-url('prev.png') no-repeat top left;
   left: 0px;
 }
 
@@ -1476,10 +1476,10 @@ h1 .main-brand {
 
 .rm_controls a.rm_play {
   display: none;
-  background: transparent url(../images/play.png) no-repeat center left;
+  background: transparent image-url('play.png') no-repeat center left;
 }
 
 .rm_controls a.rm_pause {
-  background: transparent url(../images/pause.png) no-repeat center left;
+  background: transparent image-url('pause.png') no-repeat center left;
 }
 
