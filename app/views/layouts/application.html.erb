@@ -17,6 +17,7 @@
 
 <header class="full main">
   <div class="inner">
+
     <!-- Primary navigation-->
     <nav class="main">
       <ul>
@@ -48,9 +49,9 @@
           <%= link_to_unless_current 'Kontakta oss', page_path(:contact), nav_item: :contact %>
         </li>
       </ul>
-      <%= link_to image_tag('by_frida_em_logo.jpeg', width: '250', alt: Shoppe.settings.store_name, class: 'pull-right'), root_path %>
 
     </nav>
+    <%= render 'layouts/image_slider' %>
   </div>
 </header>
 
@@ -128,7 +129,13 @@
     e-commerce engine and adopted
     by <%= link_to 'CraftAcademy', 'http://www.craftacademy.se' %>.
   </p>
-</div>
+</div><script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+
+<%= javascript_include_tag 'jquery.transform' %>
+<%#= javascript_include_tag 'jquery.mousewheel' %>
+<%= javascript_include_tag 'jquery.RotateImageMenu' %>
+
+
 
 </body>
 </html>
