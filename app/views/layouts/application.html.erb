@@ -8,7 +8,7 @@
   <%= stylesheet_link_tag :application, media: 'all' %>
   <%= javascript_include_tag :application %>
 
-  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' %>
+  <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' %>
   <%= yield :head %>
   <%= yield :js %>
 </head>
@@ -129,8 +129,8 @@
     e-commerce engine and adopted
     by <%= link_to 'CraftAcademy', 'http://www.craftacademy.se' %>.
   </p>
-</div><script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-
+</div>
+<%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js' %>
 <%= javascript_include_tag 'jquery.transform' %>
 <%#= javascript_include_tag 'jquery.mousewheel' %>
 <%= javascript_include_tag 'jquery.RotateImageMenu' %>
