@@ -12,8 +12,8 @@ class ProductsController < ApplicationController
   def index
     @products = @product_category.products.includes(:default_image, :product_categories, :variants).root.active
     respond_to do |wants|
-      wants.html { render :show }
-      wants.mobile { render :show }
+      wants.html { render :index }
+      wants.mobile { render :index }
     end
   end
   

@@ -1,50 +1,24 @@
-<div class="rm_wrapper">
-  <div id="rm_container" class="rm_container">
-    <ul>
-      <li data-images="rm_container_1" data-rotation="-15"><%= image_tag 'slider/bfem_1.jpg' %>"</li>
-      <li data-images="rm_container_2" data-rotation="-5"><%= image_tag 'slider/bfem_2.jpg' %>"</li>
-      <li data-images="rm_container_3" data-rotation="5"><%= image_tag 'slider/bfem_3.jpg' %>"</li>
-      <li data-images="rm_container_4" data-rotation="15">"<%= image_tag 'slider/bfem_4.jpg' %>"</li>
-    </ul>
-    <div id="rm_mask_left" class="rm_mask_left"></div>
-    <div id="rm_mask_right" class="rm_mask_right"></div>
-    <div id="rm_corner_left" class="rm_corner_left"></div>
-    <div id="rm_corner_right" class="rm_corner_right"></div>
-    <h2 style="margin-right: 10px">By Frida EM</h2>
-
-    <div style="display:none;">
-      <div id="rm_container_1">
-        <%= image_tag 'slider/bfem_9.jpg' %>
-        <%= image_tag 'slider/bfem_8.jpg' %>
-        <%= image_tag 'slider/bfem_7.jpg' %>
-        <%= image_tag 'slider/bfem_6.jpg' %>
-      </div>
-      <div id="rm_container_2">
-        <%= image_tag 'slider/bfem_1.jpg' %>
-        <%= image_tag 'slider/bfem_2.jpg' %>
-        <%= image_tag 'slider/bfem_3.jpg' %>
-        <%= image_tag 'slider/bfem_4.jpg' %>
-      </div>
-      <div id="rm_container_3">
-        <%= image_tag 'slider/bfem_4.jpg' %>
-        <%= image_tag 'slider/bfem_6.jpg' %>
-        <%= image_tag 'slider/bfem_8.jpg' %>
-        <%= image_tag 'slider/bfem_1.jpg' %>
-      </div>
-      <div id="rm_container_4">
-        <%= image_tag 'slider/bfem_5.jpg' %>
-        <%= image_tag 'slider/bfem_7.jpg' %>
-        <%= image_tag 'slider/bfem_9.jpg' %>
-        <%= image_tag 'slider/bfem_2.jpg' %>
-      </div>
-    </div>
-  </div>
-  <div class="rm_nav">
-    <a id="rm_next" href="#" class="rm_next"></a>
-    <a id="rm_prev" href="#" class="rm_prev"></a>
-  </div>
-  <!--div class="rm_controls">
-    <a id="rm_play" href="#" class="rm_play">Play</a>
-    <a id="rm_pause" href="#" class="rm_pause">Pause</a>
-  </div-->
+<div id="slider" style="height: 470px; z-index: -1;">
 </div>
+
+<script>
+  $(document).ready(function () {
+    $("#slider").vegas({
+      transition: 'fade',
+      overlay: '<%= image_path 'overlays/08.png' %>',
+      transitionDuration: 2000,
+      slides: [
+        {src: "<%= image_path 'slider/bfem_1.jpg' %>"},
+        {src: "<%= image_path 'slider/bfem_2.jpg' %>"},
+        {src: "<%= image_path 'slider/bfem_3.jpg' %>"},
+        {src: "<%= image_path 'slider/bfem_4.jpg' %>"},
+        {src: "<%= image_path 'slider/bfem_5.jpg' %>"},
+        {src: "<%= image_path 'slider/bfem_6.jpg' %>"},
+        {src: "<%= image_path 'slider/bfem_7.jpg' %>"},
+        {src: "<%= image_path 'slider/bfem_8.jpg' %>"},
+        {src: "<%= image_path 'slider/bfem_9.jpg' %>"}
+      ]
+    });
+  });
+
+</script>

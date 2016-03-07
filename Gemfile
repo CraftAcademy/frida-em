@@ -73,6 +73,7 @@ gem 'shoppe', github: 'tochman/shoppe', branch: 'customers'
 
 #gem 'shoppe', git: 'https://github.com/tryshoppe/shoppe'
 #gem 'klarna-checkout'
-gem 'shoppe-stripe', git: 'https://github.com/tochman/shoppe-stripe', require: 'shoppe/stripe'
+gem 'shoppe-stripe', require: 'shoppe/stripe'
+#gem 'shoppe-stripe', git: 'https://github.com/tochman/shoppe-stripe', require: 'shoppe/stripe'
 gem 'redcarpet'
 gem 'faker'

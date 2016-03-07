@@ -6,6 +6,7 @@
   <%= csrf_meta_tags %>
   <%= render 'shared/app_icons' %>
   <%= stylesheet_link_tag :application, media: 'all' %>
+  <%= stylesheet_link_tag 'vegas.css', media: 'all' %>
   <%= javascript_include_tag :application %>
 
   <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' %>
@@ -16,8 +17,11 @@
 <%= display_flash %>
 
 <header class="full main">
+  <%= render 'layouts/image_slider' %>
   <div class="inner">
-
+    <div style="margin-top: -230px;color: white; z-index: 1;">
+      <%= image_tag('by_frida_em_logo.jpeg') %>
+    </div>
     <!-- Primary navigation-->
     <nav class="main">
       <ul>
@@ -51,7 +55,7 @@
       </ul>
 
     </nav>
-    <%= render 'layouts/image_slider' %>
+
   </div>
 </header>
 
@@ -130,10 +134,8 @@
     by <%= link_to 'CraftAcademy', 'http://www.craftacademy.se' %>.
   </p>
 </div>
-<%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js' %>
-<%= javascript_include_tag 'jquery.transform' %>
+<%= javascript_include_tag 'vegas.js' %>
 <%#= javascript_include_tag 'jquery.mousewheel' %>
-<%= javascript_include_tag 'jquery.RotateImageMenu' %>
 
 
 
