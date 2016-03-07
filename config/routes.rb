@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-    mount Shoppe::Engine => "/admin"
+
+    mount Shoppe::Engine => '/admin'
   
     get 'products' => 'products#categories', :as => 'catalogue'
     get 'products/filter' => 'products#filter', :as => 'product_filter'
