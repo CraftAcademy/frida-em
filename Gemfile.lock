@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/tochman/shoppe.git
-  revision: d1394d15f83269442982ceac4d7475843b30903c
+  revision: 08aefa3261f70cf79febb9f8695fa8c232a3aff9
   branch: frida
   specs:
     shoppe (1.0.5.1)
@@ -18,7 +18,6 @@ GIT
       rails (>= 4.0.0, < 5.0)
       ransack (>= 1.2.0, < 1.6.3)
       roo (>= 1.13.0, < 1.14)
-      roo (>= 1.13.0)
       sass-rails (~> 5.0.1)
       uglifier (>= 2.2, < 3.0)
 
