@@ -1,0 +1,85 @@
+.flexbox .flex-card {
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+.flexbox .flex-card-content {
+
+  display: flex;
+  flex: 1 0 auto; /* We have to add a basis for IE10/11 */
+  flex-direction: column;
+
+}
+
+.flexbox .flex-card-content p {
+
+  flex: 1 0 auto; /* We have to add a basis for IE10/11 */
+
+}
+
+.flexbox .flex-card-list {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+}
+
+.flexbox .flex-card-listitem {
+
+  display: flex;
+
+}
+.flexbox .flex-card-listitem p, a, h1, h2, h3, h4 {
+
+  color: whitesmoke;
+
+}
+
+.flex-card-content p, a {
+
+  color: whitesmoke;
+
+}
+
+
+
+
+/* Code to adjust the layout to 2 cards per row */
+@media all and (min-width: 40em) {
+
+  /* Float layout */
+  .flex-card-list li {
+    width: 40%;
+  }
+  .no-flexbox .flex-card-list li {
+    float: left;
+
+  }
+
+}
+
+/* Code to adjust the layout to 3 cards per row */
+@media all and (min-width: 40em) and (max-width: 60em) {
+
+  /* Clears the row for 2 item per row layout */
+  .no-flexbox .flex-card-list li:nth-child(2n+1) {
+    clear: both;
+  }
+}
+
+@media all and (min-width: 60em) {
+
+  /* common to flex and non-flex */
+  .flex-card-list li {
+    width: 33.33%;
+  }
+
+  /* Float specific: Clear after every third item */
+  .no-flexbox .flex-card-list li:nth-child(3n+1) {
+    clear: both;
+  }
+
+}

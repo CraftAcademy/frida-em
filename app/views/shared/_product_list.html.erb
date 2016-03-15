@@ -1,28 +1,34 @@
-<ul class="products">
+
+<!-- card list -->
+<ul class="flex-card-list">
+  <!-- card list item -->
   <% for product in products.includes(:default_image, :product_categories) %>
-      <li>
-        <div class="img" style="<%= product_image_class(product) %>; margin-left: 10px; margin-right: 10px;"></div>
-        <h4>
-          <%= link_to product.name, product_path(product.product_category.permalink, product.permalink) %>
-        </h4>
+    <li class="flex-card-listitem">
+      <!-- card module -->
+      <div class="flex-card">
+        <!-- image container -->
+        <div class="flex-card-image">
+          <%= render 'shared/image', product: product %>
+        </div>
+        <!-- content container -->
+        <div class="flex-card-content">
+          <h3 class="flex-card-heading"><%= link_to product.name, product_path(product.product_category.permalink, product.permalink) %></h3>
 
-        <p class="info">
-          <%= truncate product.short_description, length: 90 %>
-        </p>
+          <p><%= truncate product.short_description, length: 90 %></p>
 
-        <p class="buttons">
-          <%= link_to 'Info', product_path(product.product_category.permalink, product.permalink) %>
+          <%= link_to 'Info', product_path(product.product_category.permalink, product.permalink), class: 'flex-card-button' %>
           <% if product.orderable? %>
-              <%= link_to 'Lägg till', buy_product_path(product.product_category.permalink, product.permalink), class: 'add', method: :post %>
+            <%= link_to 'Lägg till', buy_product_path(product.product_category.permalink, product.permalink), class: 'flex-card-button', method: :post %>
           <% end %>
-        </p>
-        <% unless product.has_variants? %>
-            <p class="price">
+          </p>
+          <% unless product.has_variants? %>
+            <p >
               <%= "#{number_to_currency product.price_including_tax, format: '%n %u' }" %>
             </p>
-        <% end %>
-      </li>
+          <% end %>
+        </div>
+      </div>
+    </li>
   <% end %>
 </ul>
-
       
