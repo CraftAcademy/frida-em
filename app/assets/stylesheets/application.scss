@@ -16,7 +16,8 @@ html {
 }
 
 body {
-  -webkit-font-smoothing: antialiased
+  -webkit-font-smoothing: antialiased;
+  background-color: black;
 }
 
 a {
@@ -58,7 +59,7 @@ div#flash-notice {
 
 div#flash-alert {
   background: rgba(78, 2, 9, 0.87);
-  color: #fff;
+  color: ghostwhite;
   text-align: center;
   padding: 8px;
   font-size: 0.9em;
@@ -96,21 +97,21 @@ header.main {
         margin-right: 40px;
       }
       li a {
-        color: #4e4e4e;
+        color: ghostwhite;
         display: block;
         text-decoration: none;
         border-bottom: 3px solid transparent;
         padding-bottom: 3px;
       }
       li a:hover {
-        border-color: #808080;
+        border-color: ghostwhite;
       }
       li a.noborder:hover {
         border-color: transparent
       }
       li a.active {
-        color: #808080;
-        border-color: #808080;
+        color: ghostwhite;
+        border-color: ghostwhite;
       }
       ul {
         position: absolute;
@@ -130,15 +131,15 @@ header.main {
             border: 0;
           }
           a:hover {
-            color: #808080;
+            color: ghostwhite;
           }
           &:first-child {
-            border-top-left-radius: 6px;
-            border-top-right-radius: 6px;
+            border-top-left-radius: 1px;
+            border-top-right-radius: 1px;
           }
           &:last-child {
-            border-bottom-left-radius: 6px;
-            border-bottom-right-radius: 6px;
+            border-bottom-left-radius: 1px;
+            border-bottom-right-radius: 1px;
           }
         }
       }
@@ -152,7 +153,7 @@ header.main {
       a {
         display: block;
         border: 4px solid #fff;
-        color: #fff;
+        color: ghostwhite;
         font-size: 1.1em;
         text-decoration: none;
         padding: 5px 10px;
@@ -178,7 +179,7 @@ header.main {
 
   // Offer/contact bar
   .bar {
-    background: rgba(255, 186, 210, 0.6);
+    background: rgba(248, 248, 255, 0.6);
     padding: 14px 0;
     overflow: hidden;
     p {
@@ -201,7 +202,7 @@ header.main {
   // The basic header
   //
   &.basic {
-    background: #ffffff;
+    background: ghostwhite;
     nav.main {
       padding-top: 15px;
       padding-bottom: 15px;
@@ -221,7 +222,7 @@ header.main {
 // Primary content area
 //
 section.content {
-  background: #fff;
+  //background: #fff;
   padding-bottom: 30px;
   //overflow: hidden;
   //margin-top: -100px;
@@ -243,7 +244,7 @@ section.content {
         background: image-url('search.svg') #A6A6A6 no-repeat 9px 6px;
         background-size: 14px;
         text-decoration: none;
-        color: #fff;
+        color: ghostwhite;
         font-weight: bold;
         padding: 5px 9px;
         padding-left: 28px;
@@ -252,7 +253,7 @@ section.content {
       h2 {
         font-size: 1.4em;
         font-weight: normal;
-        color: #333;
+        color: ghostwhite;
         margin-bottom: 50px;
       }
     }
@@ -264,25 +265,25 @@ section.content {
       font-size: 0.9em;
       h2 {
         font-size: 2.0em;
-        color: #FFBAD2;
+        color: ghostwhite;
         margin-top: 15px;
       }
 
       h3 {
         font-size: 1.6em;
-        color: #FFBAD2;
+        color: ghostwhite;
         margin-top: 12px;
       }
 
       h4 {
         font-size: 1.4em;
-        color: #FFBAD2;
+        color: ghostwhite;
         margin-top: 12px;
 
       }
       h4 {
         font-size: 1.1em;
-        color: #FFBAD2;
+        color: ghostwhite;
         margin-top: 10px;
 
       }
@@ -322,7 +323,7 @@ section.content {
         }
         h4 {
           margin-left: 40%;
-          color: #FFBAD2;
+          color: lightgray;
           font-size: 1.1em;
         }
         h4 a {
@@ -336,7 +337,7 @@ section.content {
           margin: 6px 0 10px 0;
           font-size: 0.85em;
           line-height: 1.7;
-          color: #444;
+          color: ghostwhite;
         }
         p.buttons {
           float: right;
@@ -370,7 +371,7 @@ section.content {
     div.category {
       h2 {
         font-size: 2.0em;
-        color: #FFBAD2;
+        color: ghostwhite;
       }
       p.intro {
         margin-top: 5px;
@@ -383,7 +384,7 @@ section.content {
       p.noProducts {
         margin-top: 130px;
         text-align: center;
-        color: #999;
+        color: ghostwhite;
       }
     }
 
@@ -393,7 +394,7 @@ section.content {
     div.status {
       h2 {
         font-size: 2.0em;
-        color: #FFBAD2;
+        color: ghostwhite;
       }
       p.intro {
         margin: 15px 0;
@@ -557,7 +558,7 @@ section.content {
 
       h2 {
         font-size: 2.0em;
-        color: #FFBAD2;
+        color: ghostwhite;
       }
       p.intro {
         margin: 15px 0;
@@ -596,7 +597,7 @@ section.content {
         text-align: right;
         margin-top: 30px;
         input {
-          background: image-url('card.svg') #FFBAD2 no-repeat 22px 9px;
+          background: image-url('card.svg') ghostwhite no-repeat 22px 9px;
           background-size: 20px;
           border: 0;
           padding: 8px 22px 8px 54px;
@@ -969,7 +970,7 @@ section.content {
             margin-left: 50%;
             input {
               float: right;
-              background: #FFBAD2;
+              background: ghostwhite;
               border: 0;
               font-family: $font;
               height: 24px;
@@ -1140,11 +1141,11 @@ section.content {
     div.basket {
       background: image-url('bag.svg') rgba(255, 186, 210, 0.2) no-repeat 18px 18px;
       background-size: 14px;
-      color: #808080;
+      color: ghostwhite;
       font-size: 0.8em;
       line-height: 1.6;
-      border-bottom-left-radius: 8px;
-      border-bottom-right-radius: 8px;
+      border-bottom-left-radius: 1px;
+      border-bottom-right-radius: 1px;
       margin-bottom: 25px;
       padding: 15px;
       padding-left: 50px;
@@ -1153,7 +1154,7 @@ section.content {
         a {
           display: inline-block;
           padding: 2px 7px;
-          background: #FFBAD2;
+          background: lightgrey;
           color: #fff;
           text-decoration: none;
           border-radius: 4px;
@@ -1167,7 +1168,7 @@ section.content {
     ul.reasons {
       background: #F1F1F1;
       padding: 15px;
-      border-radius: 8px;
+      border-radius: 1px;
       font-size: 0.9em;
       li {
         padding-left: 35px;
@@ -1202,8 +1203,8 @@ section.content {
     .checkout {
       background: #efefef;
       padding: 15px 25px;
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 1px;
+      border-bottom-right-radius: 1px;
       h2 {
         font-size: 1.4em;
         color: #216D74;
@@ -1231,7 +1232,7 @@ section.content {
 // Footer
 //
 footer.main {
-  color: #53686B;
+  color: lightgrey;
   font-size: 0.9em;
   padding: 40px 0;
   overflow: hidden;
@@ -1244,7 +1245,7 @@ footer.main {
     width: 30%;
     float: left;
     line-height: 1.8;
-    color: #97AEB2;
+    color: lightgrey;
   }
 
   div.callUs {
@@ -1267,14 +1268,14 @@ footer.main {
         width: 24px;
         height: 24px;
         text-indent: -40000px;
-        opacity: 0.3;
+        //opacity: 0.3;
         background-size: 24px;
         &:hover {
           opacity: 0.7;
         }
       }
       li.facebook a {
-        background-image: image-url('social/facebook.svg')
+        background-image: image-url('social/facebook.svg');
       }
       li.instagram a {
         background-image: image-url('social/instagram.svg')
@@ -1297,6 +1298,7 @@ footer.main {
       li.ruby a {
         background-image: image-url('social/ruby.svg')
       }
+
 
     }
   }

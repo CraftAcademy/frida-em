@@ -40,7 +40,7 @@ gem 'responders', '~> 2.0'
 group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
-  gem 'web-console'
+ # gem 'web-console'
   gem 'better_errors'
   gem 'binding_of_caller'
 end
@@ -70,7 +70,7 @@ group :staging, :production do
   gem 'rails_12factor'
 end
 #Adding gems for e-commerce solution
-gem 'shoppe', github: 'tochman/shoppe', branch: 'customers'
+gem 'shoppe', github: 'tochman/shoppe', branch: 'frida'
 
 #gem 'shoppe', git: 'https://github.com/tryshoppe/shoppe'
 #gem 'klarna-checkout'
