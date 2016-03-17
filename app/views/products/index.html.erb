@@ -12,6 +12,6 @@
   <% if @products.empty? %>
     <p class="noProducts">Det finns inga produkter i denna kategori</p>
   <% else %>
-    <%= render 'shared/product_list', products: @products %>
+    <%= render 'shared/products', products: @products %>
   <% end %>
 </div>
