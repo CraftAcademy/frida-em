@@ -6,4 +6,4 @@
   %p.browse= link_to 'Bläddra i vår katalog', catalogue_path
   %h2 Populära produkter
 
-= render 'shared/product_list', :products => @products.includes(:default_image)
+= render 'shared/products', :products => @products.includes(:default_image)

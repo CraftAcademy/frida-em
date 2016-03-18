@@ -12,7 +12,8 @@
 
             <div class="lb-overlay" id="image-1">
               <a href="#page" class="lb-close">x Close</a>
-              <img src="<%= product.default_image.path %>" class="img-responsive" alt="image01"/>
+              <!--img src="<%#= product.default_image.path %>" class="img-responsive" alt="image01"/-->
+              <%= render 'shared/image', product: product %>
 
               <div>
                 <h3><%= link_to product.name, product_path(product.product_category.permalink, product.permalink) %></h3>
