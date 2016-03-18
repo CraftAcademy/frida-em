@@ -1179,7 +1179,7 @@ a.create:hover, .account-top input[type="submit"]:hover, .register-but form inpu
 }
 
 .cssmenu ul li a {
-  color: #1a1a1a;
+  color: ghostwhite;
   display: block;
   margin: 10px 20px;
   text-transform: uppercase;
@@ -1212,7 +1212,6 @@ ul.social li a i {
   width: 35px;
   height: 35px;
   display: block;
-  background: url(../images/img-sprite.png) no-repeat;
 }
 
 ul.social li a i:hover {
@@ -1220,15 +1219,19 @@ ul.social li a i:hover {
 }
 
 ul.social li a i.instagram {
-  background-position: -5px -4px;
+  background: image_url('social/instagram.svg') no-repeat;
+  background-size: 35px;
 }
 
 ul.social li a i.fb {
-  background-position: -44px -5px;
+  background-color: red;
+  background: image_url('social/facebook.svg') no-repeat;
+  background-size: 35px;
 }
 
 ul.social li a i.tw {
-  background-position: -83px -6px;
+  background: image_url('social/twitter.svg') no-repeat;
+  background-size: 35px;
 }
 
 .copy {

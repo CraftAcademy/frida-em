@@ -40,16 +40,11 @@
               </div>
             </div>
           </li>
-          <% if service_category %>
-            <li>
-              <%= link_to service_category.name, products_path(service_category.permalink) %>
-            </li>
-          <% end %>
           <li>
-            <%= link_to_unless_current 'Frågor & Svar', page_path(:faqs), class: 'color2' %>
+            <%= link_to 'Frågor & Svar', page_path(:faqs), class: 'color2' %>
           </li>
           <li>
-            <%= link_to_unless_current 'Kontakta oss', page_path(:contact), class: 'color2' %>
+            <%= link_to 'Kontakta oss', page_path(:contact), class: 'color2' %>
           </li>
         </ul>
 

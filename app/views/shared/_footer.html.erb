@@ -3,11 +3,10 @@
     <div class="row">
       <div class="cssmenu">
         <ul>
-          <li class="active"><a href="#">Privacy</a></li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Shop</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li class="active"><%= link_to 'Hem', root_path, class: 'color2' %></li>
+          <li><%= link_to 'Om oss', page_path(:why), class: 'color2' %></li>
+          <li><%= link_to 'Frågor & Svar', page_path(:faqs), class: 'color2' %></li>
+          <li><%= link_to 'Kontakta oss', page_path(:contact), class: 'color2' %></li>
         </ul>
       </div>
       <ul class="social">
