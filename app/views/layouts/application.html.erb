@@ -38,7 +38,37 @@
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
 <%#= javascript_include_tag 'jquery.mousewheel' %>
 
-
+<script>
+  function fixFooter() {
+    footer=$(".footer");
+    height=footer.height();
+    paddingTop=parseInt(footer.css('padding-top'),10);
+    paddingBottom=parseInt(footer.css('padding-bottom'),10);
+    totalHeight=(height+paddingTop+paddingBottom);
+    footerPosition=footer.position();
+    windowHeight=$(window).height();
+    height=(windowHeight - footerPosition.top)-totalHeight;
+    if ( height > 0 ) {
+      footer.css({
+        'margin-top': (height) + 'px'
+      });
+    }
+  }
+  $(document).ready(function () {
+    fixFooter();
+    var flash = $('#flash-container');
+    if (flash.length > 0) {
+      window.setTimeout(function () {
+        flash.fadeTo(500, 0).slideUp(500, function () {
+          $(this).remove();
+        });
+      }, 5000);
+    }
+  });
+  $(window).resize(function() {
+    fixFooter();
+  });
+</script>
 </body>
 </html>
 

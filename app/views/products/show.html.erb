@@ -6,18 +6,15 @@
   <div class="container" style="background-color: black">
     <div class="col-md-12 single_top">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
           <% if @product.default_image %>
-            <div style="margin-top: 10px;">
+            <div>
               <%= render 'shared/image', product: @product %>
             </div>
-
           <% end %>
           <div class="clearfix"></div>
         </div>
-
-
-        <div class="col-md-9">
+        <div class="col-md-8">
           <h1><%= @product.name %></h1>
 
           <p class="availability">Tillgänglighet:
@@ -32,30 +29,23 @@
           </p>
 
           <div class="price_single">
-             <span class="amount item_price actual">Pris: <%= number_to_currency @product.price_including_tax, format: '%n %u' %></span>
+            <span class="amount item_price actual">Pris: <%= number_to_currency @product.price_including_tax, format: '%n %u' %></span>
           </div>
-          <h2 class="quick">Quick Overview:</h2>
+          <div>
+            <p class="quick_desc"> <%= @product.short_description %> </p>
+            <%= mail_to Shoppe.settings.email_address, 'Ställ en fråga', subject: "Fråga om #{@product.name}" %>
 
-          <p class="quick_desc"> <%= @product.short_description %> </p>
-          <%= mail_to Shoppe.settings.email_address, 'Ställ en fråga',  subject: "Fråga om #{@product.name}" %>
+          </div>
 
-          <!--div class="wish-list">
-            <ul>
-              <li class="wish"><a href="#">Add to Wishlist</a></li>
-              <li class="compare"><a href="#">Add to Compare</a></li>
-            </ul>
-          </div-->
+          <div  style="margin-top: 20px;">
+            <%= form_tag buy_product_path(@product.product_category.permalink, @product.permalink), class: (@product.in_stock? ? 'in-stock' : 'no-stock') do %>
+              <span style="color: whitesmoke;">Quantity: </span>
+              <%= select_tag 'quantity', options_for_select([1, 2, 3, 4, 5, 6, 7, 8, 9]), disabled: !@product.in_stock? %>
+              <%= submit_tag 'Lägg till...', disabled: !@product.in_stock?, class: 'btn btn-order' %>
+            <% end %>
+          </div>
 
-          <%= form_tag buy_product_path(@product.product_category.permalink, @product.permalink), class: (@product.in_stock? ? 'in-stock' : 'no-stock') do %>
-            <div class="quantity_box">
-              <ul class="product-qty">
-                <span>Quantity:</span>
-                <%= select_tag 'quantity', options_for_select([1, 2, 3, 4, 5, 6, 7, 8, 9]), disabled: !@product.in_stock? %>
-              </ul>
-              <div class="clearfix"></div>
-            </div>
-            <%= submit_tag 'Lägg till...', disabled: !@product.in_stock?, class: 'btn btn-order' %>
-          <% end %>
+
         </div>
 
         <div class="clearfix"></div>
