@@ -16,18 +16,17 @@
       <div class="menu">
         <ul class="megamenu skyblue">
           <li>
-            <%= link_to_unless_current 'Hem', root_path, class: 'color2' %>
+            <%= link_to 'Hem', root_path, class: 'color2' %>
           </li>
           <li>
-            <%= link_to_unless_current 'Om oss', page_path(:why), class: 'color2' %>
+            <%= link_to 'Om oss', page_path(:why), class: 'color2' %>
           </li>
           <li>
-            <%= link_to_unless_current 'Produkter', '#', class: 'color2' %>
+            <%= link_to 'Produkter', '#', class: 'color2' %>
             <div class="megapanel">
               <div class="row">
-                <div class="col1">
+                <div class="col2">
                   <div class="h_nav">
-                    <h4>Men</h4>
                     <ul>
                       <% for category in procuct_categories %>
                         <li>
@@ -44,7 +43,7 @@
             <%= link_to 'Frågor & Svar', page_path(:faqs), class: 'color2' %>
           </li>
           <li>
-            <%= link_to 'Kontakta oss', page_path(:contact), class: 'color2' %>
+            <%= link_to_unless_current 'Kontakta oss', page_path(:contact), class: 'color2' %>
           </li>
         </ul>
 

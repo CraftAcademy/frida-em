@@ -16,5 +16,6 @@
 //= require bootstrap-sprockets
 //= require shoppe/stripe/form_handler
 //= require vegas
+// require megamenu
 // require_directory .
 //= require turbolinks

@@ -12,6 +12,7 @@
   <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' %>
   <%= yield :head %>
   <%= yield :js %>
+
 </head>
 <body>
 <%= display_flash %>
@@ -21,13 +22,20 @@
 <!-- Main content section -->
 
 <div class="clearfix"> </div>
+<div class="container">
+  <div class="row" style="margin-top: 30px">
+    <%= yield %>
+  </div>
 
-<%= yield %>
+</div>
+
 
 <%#= render 'shared/products', products: @products %>
 <!-- Footer -->
 <%= render 'shared/footer' %>
 <%= javascript_include_tag 'vegas.js' %>
+<%= javascript_include_tag 'megamenu.js' %>
+<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
 <%#= javascript_include_tag 'jquery.mousewheel' %>
 
 
