@@ -11,4 +11,6 @@
         = render 'shared/order_items', order: current_order
 
         = link_to 'Till kassan', checkout_path, class: 'btn btn-primary'
+    .col-md-3.col-lg-offset-1
+      = render 'orders/checkout_sidebar'
 

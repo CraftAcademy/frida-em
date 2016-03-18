@@ -1,5 +1,4 @@
 - @page_title = 'Checkout'
-= render 'checkout_sidebar'
 .container
   .row
     .col-md-8
@@ -56,4 +55,6 @@
 
         - else
           %p Var snäll ring oss för att slutföra denna beställning
+    .col-md-3.col-lg-offset-1
+      = render 'orders/checkout_sidebar'
     
