@@ -9,4 +9,6 @@
           Klicka på "Till kassan" när du är redo att gå vidare"
 
         = render 'shared/order_items', order: current_order
-        
+
+        = link_to 'Till kassan', checkout_path, class: 'btn btn-primary'
+

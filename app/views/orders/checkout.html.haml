@@ -51,7 +51,8 @@
                   %dt= 'Land'
                   %dd= f.collection_select :delivery_country_id, Shoppe::Country.ordered, :id, :name
 
-            %p.submit= f.submit 'Fortsätt till betalning'
+            %p
+              = f.submit 'Fortsätt till betalning', class: 'btn'
 
         - else
           %p Var snäll ring oss för att slutföra denna beställning
