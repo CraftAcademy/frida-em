@@ -11,23 +11,26 @@
             </a>
 
             <div class="lb-overlay" id="image-<%= product.default_image.id %>">
-              <a href="#page" class="lb-close">x Close</a>
+              <a href="#page" class="lb-close">Close</a>
+              <%= link_to 'Info', product_path(product.product_category.permalink, product.permalink), class: 'lb-close btn btn-primary' %>
+              <% if product.orderable? %>
+                <%= link_to 'Lägg till', buy_product_path(product.product_category.permalink, product.permalink), class: 'lb-close btn btn-primary', method: :post %>
+              <% end %>
               <img src="<%= product.default_image.path %>" class="img-responsive" alt="image<%= product.default_image.id %>"/>
 
               <div>
                 <h3><%= link_to product.name, product_path(product.product_category.permalink, product.permalink) %></h3>
 
                 <p><%= truncate product.short_description, length: 90 %></p>
-                <%= link_to 'Info', product_path(product.product_category.permalink, product.permalink), class: 'btn' %>
-                <% if product.orderable? %>
-                  <%= link_to 'Lägg till', buy_product_path(product.product_category.permalink, product.permalink), class: 'btn', method: :post %>
-                <% end %>
+
                 </p>
                 <% unless product.has_variants? %>
                   <p>
                     <%= "#{number_to_currency product.price_including_tax, format: '%n %u' }" %>
                   </p>
                 <% end %>
+              </div>
+              <div>
 
               </div>
             </div>
