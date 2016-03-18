@@ -1,56 +1,58 @@
 - @page_title = 'Checkout'
 = render 'checkout_sidebar'
+.container
+  .row
+    .col-md-8
+      .checkout
+        %p.secure= link_to (image_tag 'solid.png'), 'https://stripe.com/se/features#seamless-security'
+        %h2 Lägg din beställning
+        %p.intro
+          Granska din beställning innan du går vidare
 
-.checkout
-  %p.secure= link_to (image_tag 'solid.png'), 'https://stripe.com/se/features#seamless-security'
-  %h2 Lägg din beställning
-  %p.intro
-    Granska din beställning innan du går vidare
+        %h3 Beställning
+        = render 'shared/order_items', :order => @order
 
-  %h3 Beställning
-  = render 'shared/order_items', :order => @order
+        - unless @order.delivery_required? && @order.delivery_service.nil?
+          %h3 Leveransuppgifter
 
-  - unless @order.delivery_required? && @order.delivery_service.nil?
-    %h3 Leveransuppgifter
+          = form_for @order, :url => checkout_path, :html => {:class => 'checkout disableable'} do |f|
+            = f.error_messages
+            .customer
+              = field_set_tag do
+                %dl
+                  %dt= f.label :first_name, "Namn", :class => 'req'
+                  %dd.name
+                    = f.text_field :first_name, :placeholder => 'Förnamn'
+                    = f.text_field :last_name, :placeholder => 'Efternamn'
+                %dl
+                  %dt= f.label :email_address, 'E-mail', :class => 'req'
+                  %dd= f.text_field :email_address
+                %dl
+                  %dt= f.label :phone_number, 'Telefonnummer', :class => 'req'
+                  %dd= f.text_field :phone_number
 
-    = form_for @order, :url => checkout_path, :html => {:class => 'checkout disableable'} do |f|
-      = f.error_messages
-      .customer
-        = field_set_tag do
-          %dl
-            %dt= f.label :first_name, "Namn", :class => 'req'
-            %dd.name
-              = f.text_field :first_name, :placeholder => 'Förnamn'
-              = f.text_field :last_name, :placeholder => 'Efternamn'
-          %dl
-            %dt= f.label :email_address, 'E-mail', :class => 'req'
-            %dd= f.text_field :email_address
-          %dl
-            %dt= f.label :phone_number, 'Telefonnummer', :class => 'req'
-            %dd= f.text_field :phone_number
+              = field_set_tag do
+                %dl
+                  %dt= f.label :billing_address1, 'Faktureringsadress', :class => 'req'
+                  %dd= f.text_field :billing_address1, :placeholder => 'Gata'
+                  %dd= f.text_field :billing_postcode, :placeholder => 'PostNr', :class => 'postcode'
+                  %dd= f.text_field :billing_address3, :placeholder => 'Stad'
+                  %dt= 'Land'
+                  %dd= f.collection_select :billing_country_id, Shoppe::Country.ordered, :id, :name
+                  %dd
+                    = f.check_box :separate_delivery_address
+                    = f.label :separate_delivery_address, 'Leverera till annan adress?'
+                %dl.delivery
+                  %dt= f.label :delivery_address1, "Leveransadress", :class => 'req'
+                  %dd= f.text_field :delivery_name, :placeholder => 'Mottagare'
+                  %dd= f.text_field :delivery_address1, :placeholder => 'Gata'
+                  %dd= f.text_field :delivery_postcode, :placeholder => 'Postnummer', :class => 'postcode'
+                  %dd= f.text_field :delivery_address3, :placeholder => 'Stad'
+                  %dt= 'Land'
+                  %dd= f.collection_select :delivery_country_id, Shoppe::Country.ordered, :id, :name
 
-        = field_set_tag do
-          %dl
-            %dt= f.label :billing_address1, 'Faktureringsadress', :class => 'req'
-            %dd= f.text_field :billing_address1, :placeholder => 'Gata'
-            %dd= f.text_field :billing_postcode, :placeholder => 'PostNr', :class => 'postcode'
-            %dd= f.text_field :billing_address3, :placeholder => 'Stad'
-            %dt= 'Land'
-            %dd= f.collection_select :billing_country_id, Shoppe::Country.ordered, :id, :name
-            %dd
-              = f.check_box :separate_delivery_address
-              = f.label :separate_delivery_address, 'Leverera till annan adress?'
-          %dl.delivery
-            %dt= f.label :delivery_address1, "Leveransadress", :class => 'req'
-            %dd= f.text_field :delivery_name, :placeholder => 'Mottagare'
-            %dd= f.text_field :delivery_address1, :placeholder => 'Gata'
-            %dd= f.text_field :delivery_postcode, :placeholder => 'Postnummer', :class => 'postcode'
-            %dd= f.text_field :delivery_address3, :placeholder => 'Stad'
-            %dt= 'Land'
-            %dd= f.collection_select :delivery_country_id, Shoppe::Country.ordered, :id, :name
+            %p.submit= f.submit 'Fortsätt till betalning'
 
-      %p.submit= f.submit 'Fortsätt till betalning'
-
-  - else
-    %p Var snäll ring oss för att slutföra denna beställning
+        - else
+          %p Var snäll ring oss för att slutföra denna beställning
     
