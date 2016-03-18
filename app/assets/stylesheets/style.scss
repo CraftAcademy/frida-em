@@ -1620,7 +1620,7 @@ span.reducedfrom {
 }
 
 h2.quick {
-  color: #000;
+ // color: #000;
   font-size: 1.2em;
   text-transform: uppercase;
 }
@@ -2588,6 +2588,8 @@ a.cpns {
   .sidebar_men h3 {
     font-size: 1.7em;
   }
+
+
   h2.quick {
     font-size: 1.1em;
   }
@@ -3125,6 +3127,31 @@ a.cpns {
     font-size: 1em;
     padding: 7px 30px;
   }
+
+  .btn.btn-order {
+    font-size: 0.8em;
+    font-weight: 300;
+    font-style: normal;
+    text-shadow: none;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    position: relative;
+    letter-spacing: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    border-radius: 0;
+    z-index: 1;
+    overflow: hidden;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    color: white !important;
+  }
+  r
   ul.tab_list {
     padding: 10px;
   }
