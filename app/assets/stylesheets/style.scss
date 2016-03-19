@@ -969,6 +969,30 @@ a.create:hover, .account-top input[type="submit"]:hover, .register-but form inpu
   text-align: center;
 }
 
+.customer input[type="submit"] {
+  background: #F9D9BE;
+  color: #000;
+  font-size: 1.1em;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  padding: 0.4em 1.3em;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+}
+
+img.cards {
+  width: 230px;
+  //margin-left: 8px;
+  //margin-top: 8px;
+}
+
 .five-in span {
   font-size: 1em;
   color: #f02b63;
